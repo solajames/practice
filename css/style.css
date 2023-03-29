@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+:root {
+  --color-white: #fff;
+  --color-black: #1f242d;
+  --color-grey-light: #a9b7ad;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 10%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7rem 10% 0;
+}
+
+.social-media a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background: transparent;
+  border: 0.2rem solid var(--color-grey-light);
+  border-radius: 50%;
+  color: var(--color-grey-light);
+  font-size: 2rem;
+  text-decoration: none;
+  margin: 3rem 1.5rem 3rem 0;
+  transition: 0.5s ease;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+
+.header__logo {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 2.5rem;
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+}
+.header__nav a {
+  display: inline-block;
+  font-size: 1.8rem;
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 1.5rem;
+  opacity: 0;
+  transition: 0.3s;
+  animation: slideTop 1s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+.header__nav a:hover, .header__nav a.active {
+  color: var(--color-grey-light);
+}
+
+.content__text {
+  max-width: 60rem;
+}
+.content__text h3 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: 0.7s;
+}
+.content__text h3:nth-of-type(2) {
+  margin-bottom: 3rem;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 0.7s;
+}
+.content__text h3 span {
+  font-family: "Press Start 2P", sans-serif;
+  color: var(--color-grey-light);
+}
+.content__text h1 {
+  font-size: 5.6rem;
+  font-weight: 700;
+  margin: -0.3rem 0;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 1s;
+}
+.content__text p {
+  font-size: 1.6rem;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 0.7s;
+}
+.content__img img {
+  max-width: 45rem;
+  border-radius: 50%;
+  margin-right: -2rem;
+  box-shadow: 0 0 2rem var(--color-grey-light);
+  opacity: 0;
+  animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+  animation-delay: 2s, 3s;
+}
+
+.social-media a:hover {
+  background: var(--color-grey-light);
+  color: var(--color-black);
+  box-shadow: 0 0 2rem var(--color-grey-light);
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.2rem 2.8rem;
+  background: var(--color-grey-light);
+  text-decoration: none;
+  border-radius: 4rem;
+  box-shadow: 0 0 1rem var(--color-grey-light);
+  font-size: 1.6rem;
+  color: var(--color-black);
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  transition: 0.5s ease;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+}
+.btn:hover {
+  box-shadow: 0 0 2rem var(--color-grey-light);
+}
+.btn:active {
+  background: none;
+  color: var(--color-grey-light);
+  border: 0.2rem solid var(--color-grey-light);
+}
+
+/* animation */
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideTop {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideBottom {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-24px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

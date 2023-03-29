@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --color-white: #fff;
+  --color-black: #1f242d;
+
+  --color-grey-light: #a9b7ad;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+html {
+  font-size: 62.5%;
+}
